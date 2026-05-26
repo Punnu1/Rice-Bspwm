@@ -3,6 +3,7 @@ Contains three themes for bspwm
 
 Requirements -
 * BSPWM (duh)
+* Picom
 * Rofi
 * Polybar
 * Dunst
