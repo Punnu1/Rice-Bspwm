@@ -132,10 +132,10 @@ interface = wlp2s0
 interval = 2
 
 format-connected = <label-connected>
-label-connected = %{A1:bash /home/psd/.config/polybar/modules/wifi.sh:}󰤨 %essid%%{A}
+label-connected = %{A1:bash ~/.config/polybar/modules/wifi.sh:}󰤨 %essid%%{A}
 format-connected-foreground = ${colors.cobalt}
 format-disconnected = <label-disconnected>
-label-disconnected = %{A1:bash /home/psd/.config/polybar/modules/wifi.sh:}󰤭 NULL%{A}
+label-disconnected = %{A1:bash ~/.config/polybar/modules/wifi.sh:}󰤭 NULL%{A}
 format-disconnected-foreground = ${colors.cobalt}
 
 [module/eth]
