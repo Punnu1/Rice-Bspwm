@@ -21,32 +21,32 @@ THEMES
 -
 BILL CYPHER (dark)
 -
-*rofi theme - Bill.rasi
-*wallpaper - Bill.jpg
-*polybar - black
-*dunst - blackrc
+* rofi theme - Bill.rasi
+* wallpaper - Bill.jpg
+* polybar - black
+* dunst - blackrc
 
 <img width="1366" height="768" alt="26-05-2026_13-30-40" src="https://github.com/user-attachments/assets/75f3d3f4-19b3-426e-8c49-da6e0fe10fe5" />
 
 BILL CYPHER (light)
 -
-*just change the wallpaper from Bill.jpg to WP.jpg
+* just change the wallpaper from Bill.jpg to WP.jpg
 
 SAKURA
 -
-*rofi theme - Sakura.rasi
-*wallpaper - MP.jpg
-*polybar - pink
-*dunst - pinkkrc
+* rofi theme - Sakura.rasi
+* wallpaper - MP.jpg
+* polybar - pink
+* dunst - pinkkrc
 
 <img width="1366" height="768" alt="25-05-2026_22-21-28" src="https://github.com/user-attachments/assets/e04e6f13-1d41-4d51-a6c7-05289d59423b" />
 
 COSMOS
 -
-*rofi theme - Cosmos.rasi
-*wallpaper - SP.jpg
-*polybar - Blue
-*dunst - bluerc
+* rofi theme - Cosmos.rasi
+* wallpaper - SP.jpg
+* polybar - Blue
+* dunst - bluerc
 
 <img width="1366" height="768" alt="26-05-2026_13-45-05" src="https://github.com/user-attachments/assets/80f8ff65-4bc4-4c42-8e85-cf9aced8382f" />
 
