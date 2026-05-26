@@ -56,3 +56,9 @@ ROFI
 Well there are two methods to apply rofi 
 * with sxhkd by using the -theme flag
 * with the config.rasi file i provided in the rofi folder
+
+NOTE
+-
+There is also a key.sh in bspwm/modules, you can bind it to a key to display your keybindings, and you can change what it displays by editing the keybinds file. 
+THANK YOU and if you like this repo star it... 
+
