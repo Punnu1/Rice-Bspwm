@@ -1,0 +1,29 @@
+#!/bin/bash
+
+pgrep -x sxhkd > /dev/null || (cd $HOME && sxhkd -c "$HOME/.config/bspwm/sxhkd/sxhkdrc" &)
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+#Border
+bspc config border_width         3
+bspc config window_gap           4
+bspc config focused_border_color "#996515"
+bspc config normal_border_color "#000000"
+
+#Window-Rules
+bspc config split_ratio          0.50
+bspc config borderless_monocle   false
+bspc config gapless_monocle      false
+bspc config automatic_scheme longest_side
+xsetroot -cursor_name left_ptr
+bspc config top_padding 20
+
+#Autostart
+picom --config "$HOME/.config/bspwm/bspwmpicom.conf" &
+sh ~/.config/bspwm/feh/wall.sh &
+killall dunst 
+#dunst -conf "$HOME/.config/bspwm/dunst/pinkrc" &
+dunst -conf "$HOME/.config/bspwm/dunst/bluerc" &
+#dunst &
+sh ~/.config/bspwm/polybar/bp.sh &
+sh ~/.config/bspwm/modules/wrm.sh &
