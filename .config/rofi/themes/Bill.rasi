@@ -2,6 +2,25 @@
  *Black color theme      
  */
 
+configuration { 
+modi: "window,run,drun";
+font: "JetBrainsMono Nerd Font 12";
+show-icons: true;
+terminal: "gnome-terminal";
+icon-theme: "Adwaita" ;
+drun-display-format: " {icon} {name} [<span weight='light' size='small'><i>({gene>
+disable-history: false;
+sort: true;
+sorting-method: "normal";
+cycle: true;
+hover-select: true;
+display-window: "  " ;
+display-run: "  " ;
+display-drun: " 󰹡 ";
+me-select-entry: "";
+me-accept-entry: "MousePrimary";
+ }
+
 * {
     foreground:                  #ffffff;
     background-alt:              #0f0f0f80;
