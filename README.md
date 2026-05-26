@@ -9,6 +9,7 @@ Requirements
 * Rofi
 * Polybar
 * Dunst
+* JetBrainsMono Nerd Font (any nerd font will work but you will have to change font name in many places and scripts)
 * Python3 (needed for some modules)
 * Bash compatible shell
 (most of my scripts are for bash so convert them if youwant to use them in another shell)
