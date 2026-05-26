@@ -1,5 +1,6 @@
 # Rice-Bspwm
 Contains three themes for bspwm
+
 Requirements -
 * BSPWM (duh)
 * Rofi
