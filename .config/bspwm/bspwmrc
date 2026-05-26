@@ -24,6 +24,6 @@ sh ~/.config/bspwm/feh/wall.sh &
 killall dunst 
 #dunst -conf "$HOME/.config/bspwm/dunst/pinkrc" &
 dunst -conf "$HOME/.config/bspwm/dunst/bluerc" &
-#dunst &
+#dunst -conf "$HOME/.config/bspwm/dunst/blackrc" &
 sh ~/.config/bspwm/polybar/bp.sh &
 sh ~/.config/bspwm/modules/wrm.sh &
