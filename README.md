@@ -3,6 +3,7 @@ Contains three themes for bspwm
 
 Requirements -
 * BSPWM (duh)
+* SXHKD (you will have this if you have BSPWM)
 * Rofi
 * Polybar
 * Dunst
