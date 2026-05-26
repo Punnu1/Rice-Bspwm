@@ -14,7 +14,7 @@ configuration {
     sorting-method:      "normal";
     cycle:               true;
     hover-select:        true;
-    display-drun         " 󰫖 ";
+    display-drun:         " 󰫖 ";
     display-window:      "  " ;
     display-run:         "  " ;
     me-select-entry:     "";
