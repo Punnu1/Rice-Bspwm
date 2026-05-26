@@ -131,9 +131,9 @@ interval = 2
 
 format-connected = <label-connected>
 format-connected-foreground = ${colors.lavender}
-label-connected = %{A1:bash /home/psd/.config/polybar/modules/wifi.sh:}󰤨 %essid%%{A}
+label-connected = %{A1:bash ~/.config/polybar/modules/wifi.sh:}󰤨 %essid%%{A}
 format-disconnected = <label-disconnected>
-label-disconnected = %{A1:bash /home/psd/.config/polybar/modules/wifi.sh:}󰤭 NULL%{A}
+label-disconnected = %{A1:bash ~/.config/polybar/modules/wifi.sh:}󰤭 NULL%{A}
 format-disconnected-foreground = ${colors.lavender}
 
 [module/eth]
@@ -143,7 +143,7 @@ interval = 2
 
 format-connected = <label-connected>
 format-connected-foreground = ${colors.lavender}
-label-connected = %{A1:gnome-terminal --class="nmtui-popup" -- nmtui:} %local_ip%%{A}
+label-connected =  %local_ip%%{A}
 label-connected-padding = 1
 
 format-disconnected =
