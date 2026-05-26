@@ -6,7 +6,7 @@ configuration {
 modi: "window,run,drun";
 font: "JetBrainsMono Nerd Font 12";
 show-icons: true;
-drun-display-format: " {icon} {name} [<span weight='light' size='small'><i>({gene>
+drun-display-format: " {icon} {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 disable-history: false;
 sort: true;
 sorting-method: "normal";
