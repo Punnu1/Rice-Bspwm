@@ -1,0 +1,29 @@
+ + \                                 | keybinds
+ + Return                            | gnome-terminal
+ + d	                              | rofi -show drun
+ + Shift + b                         | google-chrome
+ + Ctrl + Shift + l                  | lock
+ + Escape                            | reload sxhkd
+ + Shift + r                         | restart bspwm 
+ + Shift + q                         | powermenu
+ + q                                 | quit 
+ + Shift + k                         | kill
+ + m                                 | monocle
+ + g                                 | swap current node with biggest  
+ + y                                 | send newest to preselected node 
+ + t                                 | tiled 
+ + s                                 | floating
+ + f                                 | fullscreen
+ + {     }                    | switch focus
+ + {h,j,k,l}                         | switch focus
+ + Shift + {     }            | shift window 
+ + Shift + {h,j,k,l}                 | shift window 
+Alt + Tab                             | focus next 
+ + [,]                               | focus desktops
+ + 1-0                               | focus desktops
+ + Shift + 1-0                       | send to given desktop
+ + Grave                             | focus last node  
+ + Tab                               | focus last desktop
+ + {h,j,k,l} + Alt                   | expand windows
+ + {h,j,k,l} + Alt + Shift           | shrink windows
+ + {     } + Alt + Shift      | move floating windows

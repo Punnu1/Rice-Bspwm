@@ -1,0 +1,265 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   go to https://github.com/polybar/polybar
+;
+;==========================================================
+
+[colors]
+void = #0D0F18
+cobalt = #385AA8
+stardust = #8FA1CC
+sand = #F7E7A3
+ghost = #F4F7FC
+alert = #ed333b
+disabled = #707880
+
+[bar/example]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 99%
+height = 17pt
+offset-x = 0.5%
+offset-y = 1px
+radius = 4
+fixed-center = true
+center-info = true
+enable-ipc = true
+
+background = ${colors.void}
+foreground = ${colors.stardust}
+
+border-size = 0
+border-color = #000000
+
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+tray-position = none
+
+font-0 = "JetBrainsMono Nerd Font:style=regular:size=8;1"
+
+
+modules-left = bspwm crash
+modules-center = date player 
+modules-right = backlight pulseaudio memory cpu nm-icon wlan bt eth temperature battery
+
+wm-restack = bspwm
+override-redirect = false 
+
+;scroll-up = bspwm-wsnext
+;scroll-down = bspwm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;===============================================================
+;
+;  ███╗   ███╗ ██████╗ ██████╗ ██╗   ██╗██╗     ███████╗███████╗
+;  ████╗ ████║██╔═══██╗██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
+;  ██╔████╔██║██║   ██║██║  ██║██║   ██║██║     █████╗  ███████╗
+;  ██║╚██╔╝██║██║   ██║██║  ██║██║   ██║██║     ██╔══╝  ╚════██║
+;  ██║ ╚═╝ ██║╚██████╔╝██████╔╝╚██████╔╝███████╗███████╗███████║
+;  ╚═╝     ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝
+;
+;================================================================ 
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-foreground = ${colors.ghost}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-foreground = ${colors.stardust}
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = 
+label-empty-foreground = ${colors.ghost}
+label-empty-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/backlight]
+
+type = internal/backlight
+card = intel_backlight
+enable-scroll = true
+enable-click = true
+
+format = %{A1::} <label>%{A}
+
+label = %percentage%%
+format-foreground = ${colors.cobalt}
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format-prefix = " "
+format-foreground = ${colors.cobalt}
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 1
+format-prefix = " "
+format-foreground = ${colors.cobalt}
+label = %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 2
+
+format-connected = <label-connected>
+label-connected = %{A1:bash /home/psd/.config/polybar/modules/wifi.sh:}󰤨 %essid%%{A}
+format-connected-foreground = ${colors.cobalt}
+format-disconnected = <label-disconnected>
+label-disconnected = %{A1:bash /home/psd/.config/polybar/modules/wifi.sh:}󰤭 NULL%{A}
+format-disconnected-foreground = ${colors.cobalt}
+
+[module/eth]
+type = internal/network
+interface = en0
+interval = 2
+
+format-connected = <label-connected>
+label-connected = %{A1:gnome-terminal --class="nmtui-popup" -- nmtui:} %local_ip%%{A}
+format-connected-foreground = ${colors.cobalt}
+label-connected-padding = 1
+
+format-disconnected =
+label-disconnected = 
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = 
+date-alt = "%A |   %b %d %Y"
+
+time =   %H:%M:%S
+time-alt = 
+
+label = %date% %time%
+format-foreground = ${colors.sand}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> 
+label-volume =   %percentage%%
+format-volume-foreground = ${colors.cobalt}
+
+label-muted =   
+label-muted-foreground = ${colors.cobalt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 100
+
+format-charging = <label-charging> <animation-charging> 
+label-charging = %percentage%%
+format-charging-foreground = ${colors.cobalt}
+format-discharging = <label-discharging> <animation-discharging>
+label-discharging = %percentage%%
+format-discharging-foreground = ${colors.cobalt}
+
+format-full = <label-full> 󰁹
+label-full = "100%" 
+format-full-foreground = ${colors.cobalt}
+
+ramp-capacity-0 = 󰂎
+ramp-capacity-1 = 󰁻
+ramp-capacity-2 = 󰁽
+ramp-capacity-3 = 󰁿
+ramp-capacity-4 = 󰂁
+
+animation-charging-0 = 󰂎
+animation-charging-1 = 󰁻
+animation-charging-2 = 󰁽
+animation-charging-3 = 󰁿
+animation-charging-4 = 󰂁
+animation-charging-foreground = ${colors.cobalt}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 󰂁
+animation-discharging-1 = 󰁿
+animation-discharging-2 = 󰁽
+animation-discharging-3 = 󰁻
+animation-discharging-4 = 󰂎
+animation-discharging-foreground = ${colors.cobalt}
+animation-discharging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 70
+
+format = <label>
+format-warn = <label-warn>
+
+label =  %temperature-c% 
+label-warn =  %temperature-c%
+format-foreground = ${colors.cobalt}
+format-warn-foreground = ${colors.cobalt}
+
+[module/bt]
+type = custom/script
+exec = ~/.config/polybar/modules/bt.sh --status
+interval = 1
+click-left = ~/.config/polybar/modules/bt.sh
+format-foreground = ${colors.cobalt}
+
+[module/player]
+type = custom/script
+tail = true
+format = <label>
+exec = ~/.config/polybar/modules/player.sh
+interval = 1
+click-right = "kill -USR1 %pid%"
+format-foreground = ${colors.sand}
+
+[module/crash]
+type = custom/text
+click-left = ~/.config/bspwm/modules/crash.sh &
+click-right = ~/.config/bspwm/modules/powermenu.sh 
+content = "󱥸 "
+content-foreground = ${colors.stardust}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
+
