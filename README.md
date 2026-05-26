@@ -50,3 +50,8 @@ COSMOS
 
 <img width="1366" height="768" alt="26-05-2026_13-45-05" src="https://github.com/user-attachments/assets/80f8ff65-4bc4-4c42-8e85-cf9aced8382f" />
 
+ROFI
+-
+Well there are two methods to apply rofi 
+* with sxhkd by using the -theme flag
+* with the config.rasi file i provided in the rofi folder
