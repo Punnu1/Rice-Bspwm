@@ -22,7 +22,7 @@ THEMES
 BILL CYPHER (dark)
 -
 * rofi theme - Bill.rasi
-* wallpaper - Bill.jpg
+* wallpaper - bill.jpg
 * polybar - black
 * dunst - blackrc
 
@@ -45,7 +45,7 @@ COSMOS
 -
 * rofi theme - Cosmos.rasi
 * wallpaper - SP.jpg
-* polybar - Blue
+* polybar - blue
 * dunst - bluerc
 
 <img width="1366" height="768" alt="26-05-2026_13-45-05" src="https://github.com/user-attachments/assets/80f8ff65-4bc4-4c42-8e85-cf9aced8382f" />
