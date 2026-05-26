@@ -6,8 +6,6 @@ configuration {
 modi: "window,run,drun";
 font: "JetBrainsMono Nerd Font 12";
 show-icons: true;
-terminal: "gnome-terminal";
-icon-theme: "Adwaita" ;
 drun-display-format: " {icon} {name} [<span weight='light' size='small'><i>({gene>
 disable-history: false;
 sort: true;
