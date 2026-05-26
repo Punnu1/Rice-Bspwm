@@ -1,0 +1,158 @@
+/*
+ * Sakura      
+ */
+
+configuration {
+    display-drun:                " 󰫖 ";
+}
+
+* {
+    foreground:                  #D4C6F2;
+    background:                  #0a0817;
+    pink:                        #ff9e9f;
+ 
+    background-color:            transparent;
+    text-color:                  @foreground;
+    
+    // Bold, Italic, Underline
+    highlight:     underline bold #ffffff;
+    transparent: rgba(0,0,0,0);
+    font: "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    location:          center;
+    anchor:            center;
+    transparency:      "alpha";
+    padding:           0px;
+    border:            0px;
+    border-radius:     4px;
+    border-color:      @pink;
+    text-color:        @foreground;
+    background-color:  transparent;
+    spacing:           0;
+    children:          [ mainbox ];
+    orientation:       horizontal;
+    width:             400px;
+}
+
+mainbox {
+    enabled:           true;
+    spacing:           0;
+    background-color:  transparent;
+    children:          [ inputbar, message, listview ];
+}
+
+message {
+    border-color:      @pink;
+    border:            0px;
+    border-radius:     4px;
+    padding:           5px;
+    background-color:  @background;
+    text-color:        @foreground;
+}
+
+message {
+    font:              "JetBrainsMono Nerd Font 10";
+    text-color:         @foreground;
+}
+
+inputbar {
+    text-color:        @foreground;
+    padding:           8px;
+    background-color:  @background;
+    border:            2px 2px 2px 2px;
+    border-radius:     4px; 
+    border-color:      @pink;
+    font:              "JetBrainsMono Nerd Font 10";
+    children:          [ prompt, entry ];
+}
+
+entry,prompt,case-indicator {
+    text-font:         inherit;
+    text-color:        @pink;
+}
+
+prompt {
+    margin:            0px 0.5em 0em 0em ;
+}
+
+listview {
+    enabled:           true;
+    columns:            1;
+    cycle:             true;
+    layout:            vertical;
+    fixed-height:      true;
+    fixed-columns:      true;
+    scrollbar:         false;
+    padding:           8px;
+    border:            0px 2px 2px 2px;
+    border-radius:     4px;
+    border-color:      @pink;
+    background-color:  @background;
+    dynamic:           true;
+    lines:             5;
+}
+
+element {
+    padding:           4px;
+    vertical-align:    0.5;
+    border-radius:     0px;
+    background-color:  @background;
+    text-color:        @foreground;
+    font:              inherit;
+    children:          [ element-icon, element-text ];
+}
+
+element-text {
+    background-color:  inherit;
+    text-color:        inherit;
+    vertical-align:    0.5;
+} 
+
+element-icon {
+    size:              16px;
+    margin:            0 10px 0 0;
+    background-color:  transparent;
+    cursor:            inherit;
+}
+
+element selected.normal, element.selected.active {
+    background-color:  #DF5482;
+    text-color:        #ffffff;
+    border:            #DF5482;
+    border-radius:     4px;
+}
+
+element normal.active, element alternate.active {
+    text-color:        @foreground;
+    highlight:         underline bold;
+}
+
+element normal.urgent, element alternate.urgent {
+    background-color:  inherit;
+    text-color:        #ffffff;
+    border:            2px;
+    border-color:      @pink;
+}
+
+element selected.urgent {
+    background-color: #DF5482;
+    text-color:       #ffffff;
+    border:           2px;
+    border-color:     #DF5482;
+}
+
+element alternate.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+error-message {
+    expand:           true;
+    background-color: @dark;
+    border-color:     @foreground;
+    border:           2px;
+    padding:          20px;
+    text-color:       @foreground;
+}

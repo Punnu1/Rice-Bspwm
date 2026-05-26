@@ -1,0 +1,154 @@
+/*
+ *Black color theme      
+ */
+
+* {
+    foreground:                  #ffffff;
+    background-alt:              #0f0f0f80;
+    dark:                        #1c1c1c;
+    white-pure:                  #ffffff;
+    grey-dim:                    #666666;
+ 
+    background-color:            transparent;
+    text-color:                  @foreground;
+    
+    // Bold, Italic, Underline
+    highlight:     underline bold #ffffff;
+    transparent: rgba(0,0,0,0);
+    font: "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    location:          center;
+    anchor:            center;
+    transparency:      "real";
+    padding:           10px;
+    border:            2px;
+    border-radius:     0px;
+    text-color:        @foreground;
+    background-color:  @background-alt;
+    spacing:           0;
+    children:          [ mainbox ];
+    orientation:       horizontal;
+    width:             500px;
+}
+
+mainbox {
+    enabled:           true;
+    spacing:           0;
+    background-color:  @background-alt;
+    children:          [ inputbar, message, listview ];
+}
+
+message {
+    border-color:      @foreground;
+    border:            0px 2px 2px 2px;
+    padding:           5px;
+    background-color:  @dark;
+    text-color:        @foreground;
+}
+
+message {
+    font:              "JetBrainsMono Nerd Font 10";
+    text-color:         @foreground;
+}
+
+inputbar {
+    text-color:        @foreground;
+    padding:           15px;
+    background-color:  @dark;
+    border:            0px 0px 2px 0px;
+    border-color:      @foreground;
+    font:              "JetBrainsMono Nerd Font 12";
+    children:          [ prompt, entry ];
+}
+
+entry,prompt,case-indicator {
+    text-font:         inherit;
+    text-color:        inherit;
+}
+
+prompt {
+    margin:            0px 0.5em 0em 0em ;
+}
+
+listview {
+    enabled:           true;
+    columns:            1;
+    cycle:             true;
+    layout:            vertical;
+    fixed-height:      true;
+    fixed-columns:      true;
+    scrollbar:         false;
+    padding:           8px;
+    border:            0px;
+    background-color:  transparent;
+    dynamic:           true;
+    lines:             5;
+}
+
+element {
+    padding:           8px;
+    vertical-align:    0.5;
+    border-radius:     0px;
+    background-color:  transparent;
+    text-color:        @grey-dim;
+    font:              inherit;
+    children:          [ element-icon, element-text ];
+}
+
+element-text {
+    background-color:  inherit;
+    text-color:        inherit;
+    vertical-align:    0.5;
+} 
+
+element-icon {
+    size:              24px;
+    margin:            0 10px 0 0;
+    background-color:  transparent;
+    cursor:            inherit;
+}
+
+element selected.normal {
+    background-color:  @grey-dim;
+    text-color:        @white-pure;
+}
+
+element normal.active, element alternate.active {
+    text-color:        @white-pure;
+    highlight:         underline bold;
+}
+
+element normal.urgent, element alternate.urgent {
+    background-color:  @dark;
+    text-color:        @white-pure;
+    border:            1px;
+    border-color:      @white-pure;
+}
+
+element selected.active {
+    background-color: @white-pure;
+    text-color:       @dark;
+    highlight:        underline bold;
+}
+
+element selected.urgent {
+    background-color: @white-pure;
+    text-color:       @dark;
+    border:           2px;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @grey-dim;
+}
+
+error-message {
+    expand:           true;
+    background-color: @dark;
+    border-color:     @foreground;
+    border:           2px;
+    padding:          20px;
+    text-color:       @foreground;
+}

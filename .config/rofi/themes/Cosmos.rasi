@@ -1,0 +1,154 @@
+/*
+ * Cosmos 
+ */
+ 
+configuration{
+display-drun: "  ";
+}
+
+* {
+    bg-main:                    #0D0F18; //it is dark//
+    bg-dark:                    #24293e; //it is light//
+    bg-selected:                #3b4261; 
+    fg-main:                    #c0caf5; 
+    fg-dim:                     #565f89; 
+    accent-blue:                #7aa2f7; 
+    accent-magenta:             #bb9af7; 
+    
+    background-color:           transparent;
+    text-color:                 @fg-main;
+    
+    highlight:                  underline bold #7aa2f7;
+    font:                       "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    location:           center;
+    anchor:             center;
+    transparency:       "real";
+    padding:            0px;
+    border:             1px;
+    border-color:       @accent-blue; 
+    border-radius:      4px;          
+    text-color:         @fg-main;
+    background-color:   @bg-main;
+    spacing:            0;
+    children:           [ mainbox ];
+    orientation:        horizontal;
+    width:              420px;
+}
+
+mainbox {
+    enabled:            true;
+    spacing:            0;
+    background-color:   @bg-main;
+    children:           [ inputbar, message, listview ];
+}
+
+message {
+    border-color:       @accent-blue;
+    border:             0px 0px 1px 0px;
+    padding:            8px;
+    background-color:   @bg-dark;
+    text-color:         @fg-main;
+    font:               "JetBrainsMono Nerd Font 10";
+}
+
+inputbar {
+    text-color:         @fg-main;
+    padding:            8px;
+    background-color:   @bg-main;
+    border:             0px 0px 1px 0px; 
+    border-color:       @fg-dim; 
+    font:               "JetBrainsMono Nerd Font 11";
+    children:           [ prompt, entry ];
+}
+
+entry, prompt, case-indicator {
+    text-font:          inherit;
+    text-color:         inherit;
+}
+
+prompt {
+    text-color:         @accent-blue;
+    margin:             0px 0.6em 0em 0em;
+}
+
+listview {
+    enabled:            true;
+    columns:            1;
+    cycle:              true;
+    layout:             vertical;
+    fixed-height:       true;
+    fixed-columns:      true;
+    scrollbar:          false;
+    padding:            2px;
+    background-color:   @bg-main;
+    dynamic:            true;
+    lines:              5;
+}
+
+element {
+    padding:            4px;
+    vertical-align:     0.5;
+    border-radius:      0px; 
+    background-color:   transparent;
+    text-color:         @fg-main;
+    font:               inherit;
+    children:           [ element-icon, element-text ];
+    border:             1px 1px 1px 1px;
+    border-color:       @fg-dim;        
+}
+
+element-text {
+    background-color:   inherit;
+    text-color:         inherit;
+    vertical-align:     0.5;
+} 
+
+element-icon {
+    size:               18px;
+    margin:             0 12px 0 0;
+    background-color:   transparent;
+    cursor:             inherit;
+}
+
+element selected.normal {
+    background-color:   @bg-selected;
+    text-color:         @accent-blue;
+}
+
+element normal.active, element alternate.active {
+    text-color:         @inherit;
+    highlight:          underline bold;
+}
+
+element normal.urgent, element alternate.urgent {
+    background-color:   #f7768e; 
+    text-color:         @bg-dark;
+}
+
+element selected.active {
+    background-color:   @bg-selected;
+    text-color:         @accent-magenta;
+}
+
+element selected.urgent {
+    background-color:   #f7768e;
+    text-color:         @bg-dark;
+}
+
+element alternate.normal {
+    background-color:   transparent;
+    text-color:         @fg-main;
+}
+
+error-message {
+    expand:             true;
+    background-color:   @bg-dark;
+    border-color:       #f7768e;
+    border:             1px;
+    border-radius:      6px;
+    padding:            20px;
+    text-color:         #f7768e;
+}
