@@ -1,5 +1,5 @@
 #!/bin/bash
-chosen=$(echo -e "Suspend\nLogout\nReboot\nPoweroff" | rofi -dmenu -theme ~/.config/rofi/themes/Cosmos.rasi -p "System:")
+chosen=$(echo -e "Suspend\nLogout\nReboot\nPoweroff" | rofi -dmenu -p "System:")
 
 case "$chosen" in
     Suspend) systemctl suspend ;;
